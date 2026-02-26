@@ -1,0 +1,164 @@
+using System;
+using System.Windows.Forms;
+
+namespace Review_Q1
+{
+    public partial class Form1 : Form
+    {
+        private enum Choice { None = -1, Stone = 0, Paper = 1, Scissor = 2 }
+
+        private Choice compChoice = Choice.None;
+        private Choice playerChoice = Choice.None;
+        private int playerWins = 0;
+        private int compWins = 0;
+        private int ties = 0;
+        private readonly Random rng = new Random();
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            // wire events
+            this.Load += Form1_Load;
+            stoneButton.Click += stoneButton_Click;
+            paperButton.Click += paperButton_Click;
+            scissorButton.Click += scissorButton_Click;
+            // exitButton.Click already wired in Designer to exitButton_Click
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // initialize UI and counters
+            computerPictureBox.Visible = false;
+            playerPictureBox.Visible = false;
+            resultLabel.Text = string.Empty;
+
+            playerWins = 0;
+            compWins = 0;
+            ties = 0;
+
+            compChoice = Choice.None;
+            playerChoice = Choice.None;
+        }
+
+        private void getCompChoice()
+        {
+            compChoice = (Choice)rng.Next(0, 3);
+        }
+
+        private void showComputerImage()
+        {
+            switch (compChoice)
+            {
+                case Choice.Stone:
+                    computerPictureBox.Image = Properties.Resources.stone_computer;
+                    break;
+                case Choice.Paper:
+                    computerPictureBox.Image = Properties.Resources.paper_computer;
+                    break;
+                case Choice.Scissor:
+                    computerPictureBox.Image = Properties.Resources.scissor_computer;
+                    break;
+                default:
+                    computerPictureBox.Image = null;
+                    break;
+            }
+
+            computerPictureBox.Visible = computerPictureBox.Image != null;
+        }
+
+        private void showPlayerImage()
+        {
+            switch (playerChoice)
+            {
+                case Choice.Stone:
+                    playerPictureBox.Image = Properties.Resources.stone_player;
+                    break;
+                case Choice.Paper:
+                    playerPictureBox.Image = Properties.Resources.paper_player;
+                    break;
+                case Choice.Scissor:
+                    playerPictureBox.Image = Properties.Resources.scissor_player;
+                    break;
+                default:
+                    playerPictureBox.Image = null;
+                    break;
+            }
+
+            playerPictureBox.Visible = playerPictureBox.Image != null;
+        }
+
+        private void showWinner()
+        {
+            if (playerChoice == Choice.None || compChoice == Choice.None)
+            {
+                resultLabel.Text = string.Empty;
+                return;
+            }
+
+            if (playerChoice == compChoice)
+            {
+                ties++;
+                resultLabel.Text = "平手";
+                return;
+            }
+
+            bool playerWinsRound = (playerChoice == Choice.Stone && compChoice == Choice.Scissor)
+                || (playerChoice == Choice.Scissor && compChoice == Choice.Paper)
+                || (playerChoice == Choice.Paper && compChoice == Choice.Stone);
+
+            if (playerWinsRound)
+            {
+                playerWins++;
+                resultLabel.Text = "玩家贏";
+            }
+            else
+            {
+                compWins++;
+                resultLabel.Text = "電腦贏";
+            }
+        }
+
+        private void stoneButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = Choice.Stone;
+            showPlayerImage();
+            getCompChoice();
+            showComputerImage();
+            showWinner();
+        }
+
+        private void paperButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = Choice.Paper;
+            showPlayerImage();
+            getCompChoice();
+            showComputerImage();
+            showWinner();
+        }
+
+        private void scissorButton_Click(object sender, EventArgs e)
+        {
+            playerChoice = Choice.Scissor;
+            showPlayerImage();
+            getCompChoice();
+            showComputerImage();
+            showWinner();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            string stats = $"總共：玩家 {playerWins} 勝，電腦 {compWins} 勝，平手 {ties} 次";
+            MessageBox.Show(stats, "遊戲統計", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void computerLabel_Click(object sender, EventArgs e)
+        {
+        }
+    }
+}
