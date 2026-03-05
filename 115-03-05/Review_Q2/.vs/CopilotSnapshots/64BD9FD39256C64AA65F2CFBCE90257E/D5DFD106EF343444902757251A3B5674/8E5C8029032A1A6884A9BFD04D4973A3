@@ -1,0 +1,271 @@
+﻿namespace Review_Q2
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        // Controls
+        private System.Windows.Forms.GroupBox grpOilLube;
+        private System.Windows.Forms.CheckBox chkChangeOil;
+        private System.Windows.Forms.CheckBox chkLubeService;
+
+        private System.Windows.Forms.GroupBox grpCleaning;
+        private System.Windows.Forms.CheckBox chkRadiatorFlush;
+        private System.Windows.Forms.CheckBox chkTransmissionFlush;
+
+        private System.Windows.Forms.GroupBox grpOther;
+        private System.Windows.Forms.CheckBox chkInspection;
+        private System.Windows.Forms.CheckBox chkReplaceMuffler;
+        private System.Windows.Forms.CheckBox chkTireRotation;
+
+        private System.Windows.Forms.GroupBox grpPartsLabor;
+        private System.Windows.Forms.Label lblParts;
+        private System.Windows.Forms.TextBox txtParts;
+        private System.Windows.Forms.Label lblLaborHours;
+        private System.Windows.Forms.TextBox txtLaborHours;
+
+        private System.Windows.Forms.GroupBox grpSummary;
+        private System.Windows.Forms.Label lblServiceLabor;
+        // Value labels (replacing summary textboxes)
+        private System.Windows.Forms.Label lblServiceLaborValue;
+        private System.Windows.Forms.Label lblPartsCost;
+        private System.Windows.Forms.Label lblPartsCostValue;
+        private System.Windows.Forms.Label lblPartsTax;
+        private System.Windows.Forms.Label lblPartsTaxValue;
+        private System.Windows.Forms.Label lblTotalCost;
+        private System.Windows.Forms.Label lblTotalCostValue;
+
+        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnExit;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+
+            this.Text = "汽車維修服務";
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(520, 420);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+
+            // Oil and Lube Group
+            this.grpOilLube = new System.Windows.Forms.GroupBox();
+            this.grpOilLube.Text = "機油和潤滑";
+            this.grpOilLube.Location = new System.Drawing.Point(12, 12);
+            this.grpOilLube.Size = new System.Drawing.Size(240, 90);
+
+            this.chkChangeOil = new System.Windows.Forms.CheckBox();
+            this.chkChangeOil.Text = "更換機油 (NT$780)";
+            this.chkChangeOil.Name = "chkChangeOil";
+            this.chkChangeOil.AutoSize = true;
+            this.chkChangeOil.Location = new System.Drawing.Point(12, 24);
+
+            this.chkLubeService = new System.Windows.Forms.CheckBox();
+            this.chkLubeService.Text = "潤滑保養 (NT$540)";
+            this.chkLubeService.Name = "chkLubeService";
+            this.chkLubeService.AutoSize = true;
+            this.chkLubeService.Location = new System.Drawing.Point(12, 52);
+
+            this.grpOilLube.Controls.Add(this.chkChangeOil);
+            this.grpOilLube.Controls.Add(this.chkLubeService);
+
+            // Cleaning Group
+            this.grpCleaning = new System.Windows.Forms.GroupBox();
+            this.grpCleaning.Text = "清洗服務";
+            this.grpCleaning.Location = new System.Drawing.Point(268, 12);
+            this.grpCleaning.Size = new System.Drawing.Size(240, 90);
+
+            this.chkRadiatorFlush = new System.Windows.Forms.CheckBox();
+            this.chkRadiatorFlush.Text = "水箱清洗 (NT$900)";
+            this.chkRadiatorFlush.Name = "chkRadiatorFlush";
+            this.chkRadiatorFlush.AutoSize = true;
+            this.chkRadiatorFlush.Location = new System.Drawing.Point(12, 24);
+
+            this.chkTransmissionFlush = new System.Windows.Forms.CheckBox();
+            this.chkTransmissionFlush.Text = "變速箱清洗 (NT$2,400)";
+            this.chkTransmissionFlush.Name = "chkTransmissionFlush";
+            this.chkTransmissionFlush.AutoSize = true;
+            this.chkTransmissionFlush.Location = new System.Drawing.Point(12, 52);
+
+            this.grpCleaning.Controls.Add(this.chkRadiatorFlush);
+            this.grpCleaning.Controls.Add(this.chkTransmissionFlush);
+
+            // Other Services Group
+            this.grpOther = new System.Windows.Forms.GroupBox();
+            this.grpOther.Text = "其他服務";
+            this.grpOther.Location = new System.Drawing.Point(12, 110);
+            this.grpOther.Size = new System.Drawing.Size(240, 120);
+
+            this.chkInspection = new System.Windows.Forms.CheckBox();
+            this.chkInspection.Text = "檢驗 (NT$450)";
+            this.chkInspection.Name = "chkInspection";
+            this.chkInspection.AutoSize = true;
+            this.chkInspection.Location = new System.Drawing.Point(12, 24);
+
+            this.chkReplaceMuffler = new System.Windows.Forms.CheckBox();
+            this.chkReplaceMuffler.Text = "更換消音器 (NT$3,000)";
+            this.chkReplaceMuffler.Name = "chkReplaceMuffler";
+            this.chkReplaceMuffler.AutoSize = true;
+            this.chkReplaceMuffler.Location = new System.Drawing.Point(12, 52);
+
+            this.chkTireRotation = new System.Windows.Forms.CheckBox();
+            this.chkTireRotation.Text = "輪胎換位 (NT$600)";
+            this.chkTireRotation.Name = "chkTireRotation";
+            this.chkTireRotation.AutoSize = true;
+            this.chkTireRotation.Location = new System.Drawing.Point(12, 80);
+
+            this.grpOther.Controls.Add(this.chkInspection);
+            this.grpOther.Controls.Add(this.chkReplaceMuffler);
+            this.grpOther.Controls.Add(this.chkTireRotation);
+
+            // Parts and Labor Group
+            this.grpPartsLabor = new System.Windows.Forms.GroupBox();
+            this.grpPartsLabor.Text = "零件和工時";
+            this.grpPartsLabor.Location = new System.Drawing.Point(268, 110);
+            this.grpPartsLabor.Size = new System.Drawing.Size(240, 120);
+
+            this.lblParts = new System.Windows.Forms.Label();
+            this.lblParts.Text = "零件 (NT$):";
+            this.lblParts.Location = new System.Drawing.Point(12, 28);
+            this.lblParts.AutoSize = true;
+
+            this.txtParts = new System.Windows.Forms.TextBox();
+            this.txtParts.Name = "txtParts";
+            this.txtParts.Location = new System.Drawing.Point(100, 24);
+            this.txtParts.Size = new System.Drawing.Size(120, 23);
+
+            this.lblLaborHours = new System.Windows.Forms.Label();
+            this.lblLaborHours.Text = "工時數 (小時):";
+            this.lblLaborHours.Location = new System.Drawing.Point(12, 64);
+            this.lblLaborHours.AutoSize = true;
+
+            this.txtLaborHours = new System.Windows.Forms.TextBox();
+            this.txtLaborHours.Name = "txtLaborHours";
+            this.txtLaborHours.Location = new System.Drawing.Point(100, 60);
+            this.txtLaborHours.Size = new System.Drawing.Size(120, 23);
+
+            this.grpPartsLabor.Controls.Add(this.lblParts);
+            this.grpPartsLabor.Controls.Add(this.txtParts);
+            this.grpPartsLabor.Controls.Add(this.lblLaborHours);
+            this.grpPartsLabor.Controls.Add(this.txtLaborHours);
+
+            // Summary Group
+            this.grpSummary = new System.Windows.Forms.GroupBox();
+            this.grpSummary.Text = "費用摘要";
+            this.grpSummary.Location = new System.Drawing.Point(12, 240);
+            this.grpSummary.Size = new System.Drawing.Size(496, 110);
+
+            this.lblServiceLabor = new System.Windows.Forms.Label();
+            this.lblServiceLabor.Text = "服務與工資";
+            this.lblServiceLabor.Location = new System.Drawing.Point(12, 28);
+            this.lblServiceLabor.AutoSize = true;
+
+            // Value label for service & labor
+            this.lblServiceLaborValue = new System.Windows.Forms.Label();
+            this.lblServiceLaborValue.Name = "lblServiceLaborValue";
+            this.lblServiceLaborValue.Location = new System.Drawing.Point(120, 24);
+            this.lblServiceLaborValue.Size = new System.Drawing.Size(120, 23);
+            this.lblServiceLaborValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblServiceLaborValue.Text = "";
+
+            this.lblPartsCost = new System.Windows.Forms.Label();
+            this.lblPartsCost.Text = "零件";
+            this.lblPartsCost.Location = new System.Drawing.Point(12, 56);
+            this.lblPartsCost.AutoSize = true;
+
+            this.lblPartsCostValue = new System.Windows.Forms.Label();
+            this.lblPartsCostValue.Name = "lblPartsCostValue";
+            this.lblPartsCostValue.Location = new System.Drawing.Point(120, 52);
+            this.lblPartsCostValue.Size = new System.Drawing.Size(120, 23);
+            this.lblPartsCostValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPartsCostValue.Text = "";
+
+            this.lblPartsTax = new System.Windows.Forms.Label();
+            this.lblPartsTax.Text = "稅金 (零件)";
+            this.lblPartsTax.Location = new System.Drawing.Point(260, 28);
+            this.lblPartsTax.AutoSize = true;
+
+            this.lblPartsTaxValue = new System.Windows.Forms.Label();
+            this.lblPartsTaxValue.Name = "lblPartsTaxValue";
+            this.lblPartsTaxValue.Location = new System.Drawing.Point(360, 24);
+            this.lblPartsTaxValue.Size = new System.Drawing.Size(120, 23);
+            this.lblPartsTaxValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblPartsTaxValue.Text = "";
+
+            this.lblTotalCost = new System.Windows.Forms.Label();
+            this.lblTotalCost.Text = "總費用";
+            this.lblTotalCost.Location = new System.Drawing.Point(260, 56);
+            this.lblTotalCost.AutoSize = true;
+
+            this.lblTotalCostValue = new System.Windows.Forms.Label();
+            this.lblTotalCostValue.Name = "lblTotalCostValue";
+            this.lblTotalCostValue.Location = new System.Drawing.Point(360, 52);
+            this.lblTotalCostValue.Size = new System.Drawing.Size(120, 23);
+            this.lblTotalCostValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTotalCostValue.Text = "";
+
+            this.grpSummary.Controls.Add(this.lblServiceLabor);
+            this.grpSummary.Controls.Add(this.lblServiceLaborValue);
+            this.grpSummary.Controls.Add(this.lblPartsCost);
+            this.grpSummary.Controls.Add(this.lblPartsCostValue);
+            this.grpSummary.Controls.Add(this.lblPartsTax);
+            this.grpSummary.Controls.Add(this.lblPartsTaxValue);
+            this.grpSummary.Controls.Add(this.lblTotalCost);
+            this.grpSummary.Controls.Add(this.lblTotalCostValue);
+
+            // Buttons
+            this.btnCalculate = new System.Windows.Forms.Button();
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Text = "計算總額";
+            this.btnCalculate.Size = new System.Drawing.Size(90, 30);
+            this.btnCalculate.Location = new System.Drawing.Point(120, 360);
+
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Text = "清除";
+            this.btnClear.Size = new System.Drawing.Size(90, 30);
+            this.btnClear.Location = new System.Drawing.Point(220, 360);
+
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Text = "離開";
+            this.btnExit.Size = new System.Drawing.Size(90, 30);
+            this.btnExit.Location = new System.Drawing.Point(320, 360);
+
+            // Add controls to form
+            this.Controls.Add(this.grpOilLube);
+            this.Controls.Add(this.grpCleaning);
+            this.Controls.Add(this.grpOther);
+            this.Controls.Add(this.grpPartsLabor);
+            this.Controls.Add(this.grpSummary);
+            this.Controls.Add(this.btnCalculate);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnExit);
+        }
+
+        #endregion
+    }
+}
