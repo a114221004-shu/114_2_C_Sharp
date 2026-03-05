@@ -1,0 +1,244 @@
+﻿namespace Review_Q3
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        // UI controls
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel pnlGeneratedNumbers;
+        private System.Windows.Forms.Label lblGenerated1;
+        private System.Windows.Forms.Label lblGenerated2;
+        private System.Windows.Forms.Label lblGenerated3;
+        private System.Windows.Forms.Label lblGenerated4;
+        private System.Windows.Forms.Label lblGenerated5;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnLoadWinning;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ListBox lstWinningNumbers;
+        private System.Windows.Forms.GroupBox grpResults;
+        private System.Windows.Forms.Label lblResultHeader;
+        private System.Windows.Forms.Label lblMatchCount;
+        private System.Windows.Forms.Label lblMatchDetails;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlGeneratedNumbers = new System.Windows.Forms.Panel();
+            this.lblGenerated1 = new System.Windows.Forms.Label();
+            this.lblGenerated2 = new System.Windows.Forms.Label();
+            this.lblGenerated3 = new System.Windows.Forms.Label();
+            this.lblGenerated4 = new System.Windows.Forms.Label();
+            this.lblGenerated5 = new System.Windows.Forms.Label();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnLoadWinning = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.lstWinningNumbers = new System.Windows.Forms.ListBox();
+            this.grpResults = new System.Windows.Forms.GroupBox();
+            this.lblResultHeader = new System.Windows.Forms.Label();
+            this.lblMatchCount = new System.Windows.Forms.Label();
+            this.lblMatchDetails = new System.Windows.Forms.Label();
+            this.grpResults.SuspendLayout();
+            this.pnlGeneratedNumbers.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(920, 620);
+            this.Text = "樂透號碼產生器";
+            this.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(20, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(200, 31);
+            this.lblTitle.Text = "樂透號碼產生器";
+
+            // 
+            // pnlGeneratedNumbers
+            // 
+            this.pnlGeneratedNumbers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlGeneratedNumbers.Location = new System.Drawing.Point(20, 60);
+            this.pnlGeneratedNumbers.Name = "pnlGeneratedNumbers";
+            this.pnlGeneratedNumbers.Size = new System.Drawing.Size(860, 130);
+            this.pnlGeneratedNumbers.TabIndex = 1;
+
+            // generated number labels inside panel
+            int numLabelSize = 110;
+            int numSpacing = 30;
+            int startX = 30;
+            int startY = 10;
+
+            // 
+            // lblGenerated1
+            // 
+            this.lblGenerated1.Name = "lblGenerated1";
+            this.lblGenerated1.Text = string.Empty;
+            this.lblGenerated1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGenerated1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGenerated1.Size = new System.Drawing.Size(numLabelSize, numLabelSize);
+            this.lblGenerated1.Location = new System.Drawing.Point(startX, startY);
+
+            // 
+            // lblGenerated2
+            // 
+            this.lblGenerated2.Name = "lblGenerated2";
+            this.lblGenerated2.Text = string.Empty;
+            this.lblGenerated2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGenerated2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGenerated2.Size = new System.Drawing.Size(numLabelSize, numLabelSize);
+            this.lblGenerated2.Location = new System.Drawing.Point(startX + (numLabelSize + numSpacing) * 1, startY);
+
+            // 
+            // lblGenerated3
+            // 
+            this.lblGenerated3.Name = "lblGenerated3";
+            this.lblGenerated3.Text = string.Empty;
+            this.lblGenerated3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGenerated3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGenerated3.Size = new System.Drawing.Size(numLabelSize, numLabelSize);
+            this.lblGenerated3.Location = new System.Drawing.Point(startX + (numLabelSize + numSpacing) * 2, startY);
+
+            // 
+            // lblGenerated4
+            // 
+            this.lblGenerated4.Name = "lblGenerated4";
+            this.lblGenerated4.Text = string.Empty;
+            this.lblGenerated4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGenerated4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGenerated4.Size = new System.Drawing.Size(numLabelSize, numLabelSize);
+            this.lblGenerated4.Location = new System.Drawing.Point(startX + (numLabelSize + numSpacing) * 3, startY);
+
+            // 
+            // lblGenerated5
+            // 
+            this.lblGenerated5.Name = "lblGenerated5";
+            this.lblGenerated5.Text = string.Empty;
+            this.lblGenerated5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGenerated5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblGenerated5.Size = new System.Drawing.Size(numLabelSize, numLabelSize);
+            this.lblGenerated5.Location = new System.Drawing.Point(startX + (numLabelSize + numSpacing) * 4, startY);
+
+            // add labels to panel
+            this.pnlGeneratedNumbers.Controls.Add(this.lblGenerated1);
+            this.pnlGeneratedNumbers.Controls.Add(this.lblGenerated2);
+            this.pnlGeneratedNumbers.Controls.Add(this.lblGenerated3);
+            this.pnlGeneratedNumbers.Controls.Add(this.lblGenerated4);
+            this.pnlGeneratedNumbers.Controls.Add(this.lblGenerated5);
+
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Text = "產生號碼";
+            this.btnGenerate.Size = new System.Drawing.Size(200, 60);
+            this.btnGenerate.Location = new System.Drawing.Point(80, 210);
+
+            // 
+            // btnLoadWinning
+            // 
+            this.btnLoadWinning.Name = "btnLoadWinning";
+            this.btnLoadWinning.Text = "開獎號碼";
+            this.btnLoadWinning.Size = new System.Drawing.Size(200, 60);
+            this.btnLoadWinning.Location = new System.Drawing.Point(360, 210);
+
+            // 
+            // btnExit
+            // 
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Text = "離開";
+            this.btnExit.Size = new System.Drawing.Size(200, 60);
+            this.btnExit.Location = new System.Drawing.Point(640, 210);
+
+            // 
+            // lstWinningNumbers
+            // 
+            this.lstWinningNumbers.Name = "lstWinningNumbers";
+            this.lstWinningNumbers.Size = new System.Drawing.Size(560, 260);
+            this.lstWinningNumbers.Location = new System.Drawing.Point(20, 290);
+            this.lstWinningNumbers.Font = new System.Drawing.Font("Microsoft JhengHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+
+            // 
+            // grpResults
+            // 
+            this.grpResults.Name = "grpResults";
+            this.grpResults.Text = string.Empty; // keep group box header empty as requested
+            this.grpResults.Size = new System.Drawing.Size(300, 260);
+            this.grpResults.Location = new System.Drawing.Point(600, 290);
+
+            // 
+            // lblResultHeader
+            // 
+            this.lblResultHeader.Name = "lblResultHeader";
+            this.lblResultHeader.Text = string.Empty;
+            this.lblResultHeader.AutoSize = true;
+            this.lblResultHeader.Location = new System.Drawing.Point(20, 30);
+
+            // 
+            // lblMatchCount
+            // 
+            this.lblMatchCount.Name = "lblMatchCount";
+            this.lblMatchCount.Text = string.Empty;
+            this.lblMatchCount.AutoSize = true;
+            this.lblMatchCount.Location = new System.Drawing.Point(20, 70);
+
+            // 
+            // lblMatchDetails
+            // 
+            this.lblMatchDetails.Name = "lblMatchDetails";
+            this.lblMatchDetails.Text = string.Empty;
+            this.lblMatchDetails.AutoSize = true;
+            this.lblMatchDetails.Location = new System.Drawing.Point(20, 110);
+
+            // add result labels to group
+            this.grpResults.Controls.Add(this.lblResultHeader);
+            this.grpResults.Controls.Add(this.lblMatchCount);
+            this.grpResults.Controls.Add(this.lblMatchDetails);
+
+            // 
+            // Add controls to Form
+            // 
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.pnlGeneratedNumbers);
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.btnLoadWinning);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lstWinningNumbers);
+            this.Controls.Add(this.grpResults);
+
+            this.grpResults.ResumeLayout(false);
+            this.grpResults.PerformLayout();
+            this.pnlGeneratedNumbers.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+}
