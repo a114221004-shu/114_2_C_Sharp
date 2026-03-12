@@ -1,0 +1,188 @@
+﻿namespace Review_Q3
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        // UI controls
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label[] lblGeneratedNumbers;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnLoadFile;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ListBox lstDrawnNumbers;
+        private System.Windows.Forms.GroupBox grpMatchResults;
+        private System.Windows.Forms.Label[] lblMatchResults;
+        private System.Windows.Forms.OpenFileDialog ofdOpenWinningNumbers;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.lblGeneratedNumbers = new System.Windows.Forms.Label[6];
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnLoadFile = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.lstDrawnNumbers = new System.Windows.Forms.ListBox();
+            this.grpMatchResults = new System.Windows.Forms.GroupBox();
+            this.lblMatchResults = new System.Windows.Forms.Label[6];
+            this.ofdOpenWinningNumbers = new System.Windows.Forms.OpenFileDialog();
+
+            this.SuspendLayout();
+            // 
+            // Form1
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "樂透號碼產生器";
+            this.Name = "Form1";
+            this.BackColor = System.Drawing.Color.White;
+
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Location = new System.Drawing.Point(24, 16);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(120, 16);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "樂透號碼產生器";
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold);
+
+            // Generated number labels (array) - center horizontally
+            int labelCount = this.lblGeneratedNumbers.Length;
+            int labelWidth = 72;
+            int labelHeight = 72;
+            int gapX = 30;
+            int totalWidth = labelCount * labelWidth + (labelCount - 1) * gapX;
+            int startX = (this.ClientSize.Width - totalWidth) / 2;
+            int startY = 40;
+
+            for (int i = 0; i < this.lblGeneratedNumbers.Length; i++)
+            {
+                var lbl = new System.Windows.Forms.Label();
+                lbl.Name = "lblNumber" + (i + 1).ToString();
+                lbl.Size = new System.Drawing.Size(labelWidth, labelHeight);
+                lbl.Location = new System.Drawing.Point(startX + i * (labelWidth + gapX), startY);
+                lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                lbl.Font = new System.Drawing.Font("Microsoft JhengHei", 14F, System.Drawing.FontStyle.Bold);
+                lbl.BackColor = System.Drawing.Color.WhiteSmoke;
+                lbl.Text = "";
+                this.lblGeneratedNumbers[i] = lbl;
+                this.Controls.Add(lbl);
+            }
+
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Location = new System.Drawing.Point(160, 130);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(120, 40);
+            this.btnGenerate.TabIndex = 1;
+            this.btnGenerate.Text = "產生號碼";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+
+            // 
+            // btnLoadFile
+            // 
+            this.btnLoadFile.Location = new System.Drawing.Point(320, 130);
+            this.btnLoadFile.Name = "btnLoadFile";
+            this.btnLoadFile.Size = new System.Drawing.Size(120, 40);
+            this.btnLoadFile.TabIndex = 2;
+            this.btnLoadFile.Text = "開獎號碼";
+            this.btnLoadFile.UseVisualStyleBackColor = true;
+
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(480, 130);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(120, 40);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "離開";
+            this.btnExit.UseVisualStyleBackColor = true;
+
+            // 
+            // lstDrawnNumbers
+            // 
+            this.lstDrawnNumbers.FormattingEnabled = true;
+            this.lstDrawnNumbers.ItemHeight = 16;
+            this.lstDrawnNumbers.Location = new System.Drawing.Point(24, 190);
+            this.lstDrawnNumbers.Name = "lstDrawnNumbers";
+            this.lstDrawnNumbers.Size = new System.Drawing.Size(440, 220);
+            this.lstDrawnNumbers.TabIndex = 4;
+
+            // 
+            // grpMatchResults
+            // 
+            this.grpMatchResults.Location = new System.Drawing.Point(480, 190);
+            this.grpMatchResults.Name = "grpMatchResults";
+            this.grpMatchResults.Size = new System.Drawing.Size(288, 220);
+            this.grpMatchResults.TabIndex = 5;
+            this.grpMatchResults.TabStop = false;
+            this.grpMatchResults.Text = "中獎比對結果";
+
+            // match result labels inside groupbox
+            int matchStartX = 12;
+            int matchStartY = 24;
+            int matchGapY = 30;
+            for (int i = 0; i < this.lblMatchResults.Length; i++)
+            {
+                var m = new System.Windows.Forms.Label();
+                m.Name = "lblMatchResult" + (i + 1).ToString();
+                m.Size = new System.Drawing.Size(260, 22);
+                m.Location = new System.Drawing.Point(matchStartX, matchStartY + i * matchGapY);
+                m.Text = "";
+                m.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                m.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                this.lblMatchResults[i] = m;
+                this.grpMatchResults.Controls.Add(m);
+            }
+
+            // 
+            // ofdOpenWinningNumbers
+            // 
+            this.ofdOpenWinningNumbers.Filter = "Text Files|*.txt|All Files|*.*";
+            this.ofdOpenWinningNumbers.Title = "開啟開獎號碼檔案";
+            // ensure OpenFileDialog is disposed with components
+            this.components.Add(this.ofdOpenWinningNumbers);
+
+            // Add controls to form
+            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.btnLoadFile);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lstDrawnNumbers);
+            this.Controls.Add(this.grpMatchResults);
+
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+}
+

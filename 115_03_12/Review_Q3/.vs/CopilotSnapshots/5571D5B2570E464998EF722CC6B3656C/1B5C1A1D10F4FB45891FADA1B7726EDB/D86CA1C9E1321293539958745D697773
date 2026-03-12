@@ -1,0 +1,298 @@
+﻿namespace Review_Q3
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        // UI controls
+        private System.Windows.Forms.Label labelTitle;
+        // individual labels instead of arrays for designer compatibility
+        private System.Windows.Forms.Label lblNumber1;
+        private System.Windows.Forms.Label lblNumber2;
+        private System.Windows.Forms.Label lblNumber3;
+        private System.Windows.Forms.Label lblNumber4;
+        private System.Windows.Forms.Label lblNumber5;
+        private System.Windows.Forms.Label lblNumber6;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnLoadFile;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ListBox lstDrawnNumbers;
+        private System.Windows.Forms.GroupBox grpMatchResults;
+        private System.Windows.Forms.Label lblMatchResult1;
+        private System.Windows.Forms.Label lblMatchResult2;
+        private System.Windows.Forms.Label lblMatchResult3;
+        private System.Windows.Forms.Label lblMatchResult4;
+        private System.Windows.Forms.Label lblMatchResult5;
+        private System.Windows.Forms.Label lblMatchResult6;
+        private System.Windows.Forms.OpenFileDialog ofdOpenWinningNumbers;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.lblNumber1 = new System.Windows.Forms.Label();
+            this.lblNumber2 = new System.Windows.Forms.Label();
+            this.lblNumber3 = new System.Windows.Forms.Label();
+            this.lblNumber4 = new System.Windows.Forms.Label();
+            this.lblNumber5 = new System.Windows.Forms.Label();
+            this.lblNumber6 = new System.Windows.Forms.Label();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnLoadFile = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.lstDrawnNumbers = new System.Windows.Forms.ListBox();
+            this.grpMatchResults = new System.Windows.Forms.GroupBox();
+            this.lblMatchResult1 = new System.Windows.Forms.Label();
+            this.lblMatchResult2 = new System.Windows.Forms.Label();
+            this.lblMatchResult3 = new System.Windows.Forms.Label();
+            this.lblMatchResult4 = new System.Windows.Forms.Label();
+            this.lblMatchResult5 = new System.Windows.Forms.Label();
+            this.lblMatchResult6 = new System.Windows.Forms.Label();
+            this.ofdOpenWinningNumbers = new System.Windows.Forms.OpenFileDialog();
+
+            this.SuspendLayout();
+            // 
+            // Form1
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "樂透號碼產生器";
+            this.Name = "Form1";
+            this.BackColor = System.Drawing.Color.White;
+
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Location = new System.Drawing.Point(24, 16);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(120, 16);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "樂透號碼產生器";
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold);
+
+            // Generated number labels (explicit)
+            int labelWidth = 72;
+            int labelHeight = 72;
+            int gapX = 30;
+            int labelCount = 6;
+            var startX = (this.ClientSize.Width - (labelCount * labelWidth + (labelCount - 1) * gapX)) / 2;
+            int startY = 40;
+
+            // lblNumber1
+            this.lblNumber1.Name = "lblNumber1";
+            this.lblNumber1.Size = new System.Drawing.Size(labelWidth, labelHeight);
+            this.lblNumber1.Location = new System.Drawing.Point(startX + 0 * (labelWidth + gapX), startY);
+            this.lblNumber1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNumber1.Font = new System.Drawing.Font("Microsoft JhengHei", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNumber1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumber1.Text = "";
+
+            // lblNumber2
+            this.lblNumber2.Name = "lblNumber2";
+            this.lblNumber2.Size = new System.Drawing.Size(labelWidth, labelHeight);
+            this.lblNumber2.Location = new System.Drawing.Point(startX + 1 * (labelWidth + gapX), startY);
+            this.lblNumber2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNumber2.Font = new System.Drawing.Font("Microsoft JhengHei", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNumber2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumber2.Text = "";
+
+            // lblNumber3
+            this.lblNumber3.Name = "lblNumber3";
+            this.lblNumber3.Size = new System.Drawing.Size(labelWidth, labelHeight);
+            this.lblNumber3.Location = new System.Drawing.Point(startX + 2 * (labelWidth + gapX), startY);
+            this.lblNumber3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNumber3.Font = new System.Drawing.Font("Microsoft JhengHei", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNumber3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumber3.Text = "";
+
+            // lblNumber4
+            this.lblNumber4.Name = "lblNumber4";
+            this.lblNumber4.Size = new System.Drawing.Size(labelWidth, labelHeight);
+            this.lblNumber4.Location = new System.Drawing.Point(startX + 3 * (labelWidth + gapX), startY);
+            this.lblNumber4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNumber4.Font = new System.Drawing.Font("Microsoft JhengHei", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNumber4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumber4.Text = "";
+
+            // lblNumber5
+            this.lblNumber5.Name = "lblNumber5";
+            this.lblNumber5.Size = new System.Drawing.Size(labelWidth, labelHeight);
+            this.lblNumber5.Location = new System.Drawing.Point(startX + 4 * (labelWidth + gapX), startY);
+            this.lblNumber5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNumber5.Font = new System.Drawing.Font("Microsoft JhengHei", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNumber5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumber5.Text = "";
+
+            // lblNumber6
+            this.lblNumber6.Name = "lblNumber6";
+            this.lblNumber6.Size = new System.Drawing.Size(labelWidth, labelHeight);
+            this.lblNumber6.Location = new System.Drawing.Point(startX + 5 * (labelWidth + gapX), startY);
+            this.lblNumber6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNumber6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNumber6.Font = new System.Drawing.Font("Microsoft JhengHei", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNumber6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNumber6.Text = "";
+
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Location = new System.Drawing.Point(160, 130);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(120, 40);
+            this.btnGenerate.TabIndex = 1;
+            this.btnGenerate.Text = "產生號碼";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+
+            // 
+            // btnLoadFile
+            // 
+            this.btnLoadFile.Location = new System.Drawing.Point(320, 130);
+            this.btnLoadFile.Name = "btnLoadFile";
+            this.btnLoadFile.Size = new System.Drawing.Size(120, 40);
+            this.btnLoadFile.TabIndex = 2;
+            this.btnLoadFile.Text = "開獎號碼";
+            this.btnLoadFile.UseVisualStyleBackColor = true;
+
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(480, 130);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(120, 40);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "離開";
+            this.btnExit.UseVisualStyleBackColor = true;
+
+            // 
+            // lstDrawnNumbers
+            // 
+            this.lstDrawnNumbers.FormattingEnabled = true;
+            this.lstDrawnNumbers.ItemHeight = 16;
+            this.lstDrawnNumbers.Location = new System.Drawing.Point(24, 190);
+            this.lstDrawnNumbers.Name = "lstDrawnNumbers";
+            this.lstDrawnNumbers.Size = new System.Drawing.Size(440, 220);
+            this.lstDrawnNumbers.TabIndex = 4;
+
+            // 
+            // grpMatchResults
+            // 
+            this.grpMatchResults.Location = new System.Drawing.Point(480, 190);
+            this.grpMatchResults.Name = "grpMatchResults";
+            this.grpMatchResults.Size = new System.Drawing.Size(288, 220);
+            this.grpMatchResults.TabIndex = 5;
+            this.grpMatchResults.TabStop = false;
+            this.grpMatchResults.Text = "中獎比對結果";
+
+            // match result labels inside groupbox (explicit)
+            int matchStartX = 12;
+            int matchStartY = 24;
+            int matchGapY = 30;
+
+            this.lblMatchResult1.Name = "lblMatchResult1";
+            this.lblMatchResult1.Size = new System.Drawing.Size(260, 22);
+            this.lblMatchResult1.Location = new System.Drawing.Point(matchStartX, matchStartY + 0 * matchGapY);
+            this.lblMatchResult1.Text = "";
+            this.lblMatchResult1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchResult1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            this.lblMatchResult2.Name = "lblMatchResult2";
+            this.lblMatchResult2.Size = new System.Drawing.Size(260, 22);
+            this.lblMatchResult2.Location = new System.Drawing.Point(matchStartX, matchStartY + 1 * matchGapY);
+            this.lblMatchResult2.Text = "";
+            this.lblMatchResult2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchResult2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            this.lblMatchResult3.Name = "lblMatchResult3";
+            this.lblMatchResult3.Size = new System.Drawing.Size(260, 22);
+            this.lblMatchResult3.Location = new System.Drawing.Point(matchStartX, matchStartY + 2 * matchGapY);
+            this.lblMatchResult3.Text = "";
+            this.lblMatchResult3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchResult3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            this.lblMatchResult4.Name = "lblMatchResult4";
+            this.lblMatchResult4.Size = new System.Drawing.Size(260, 22);
+            this.lblMatchResult4.Location = new System.Drawing.Point(matchStartX, matchStartY + 3 * matchGapY);
+            this.lblMatchResult4.Text = "";
+            this.lblMatchResult4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchResult4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            this.lblMatchResult5.Name = "lblMatchResult5";
+            this.lblMatchResult5.Size = new System.Drawing.Size(260, 22);
+            this.lblMatchResult5.Location = new System.Drawing.Point(matchStartX, matchStartY + 4 * matchGapY);
+            this.lblMatchResult5.Text = "";
+            this.lblMatchResult5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchResult5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            this.lblMatchResult6.Name = "lblMatchResult6";
+            this.lblMatchResult6.Size = new System.Drawing.Size(260, 22);
+            this.lblMatchResult6.Location = new System.Drawing.Point(matchStartX, matchStartY + 5 * matchGapY);
+            this.lblMatchResult6.Text = "";
+            this.lblMatchResult6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMatchResult6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
+            // 
+            // ofdOpenWinningNumbers
+            // 
+            this.ofdOpenWinningNumbers.Filter = "Text Files|*.txt|All Files|*.*";
+            this.ofdOpenWinningNumbers.Title = "開啟開獎號碼檔案";
+            this.components.Add(this.ofdOpenWinningNumbers);
+
+            // Add controls to form
+            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.btnLoadFile);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lstDrawnNumbers);
+            this.Controls.Add(this.grpMatchResults);
+
+            // add generated number labels
+            this.Controls.Add(this.lblNumber1);
+            this.Controls.Add(this.lblNumber2);
+            this.Controls.Add(this.lblNumber3);
+            this.Controls.Add(this.lblNumber4);
+            this.Controls.Add(this.lblNumber5);
+            this.Controls.Add(this.lblNumber6);
+
+            // add match labels into groupbox
+            this.grpMatchResults.Controls.Add(this.lblMatchResult1);
+            this.grpMatchResults.Controls.Add(this.lblMatchResult2);
+            this.grpMatchResults.Controls.Add(this.lblMatchResult3);
+            this.grpMatchResults.Controls.Add(this.lblMatchResult4);
+            this.grpMatchResults.Controls.Add(this.lblMatchResult5);
+            this.grpMatchResults.Controls.Add(this.lblMatchResult6);
+
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+}
+

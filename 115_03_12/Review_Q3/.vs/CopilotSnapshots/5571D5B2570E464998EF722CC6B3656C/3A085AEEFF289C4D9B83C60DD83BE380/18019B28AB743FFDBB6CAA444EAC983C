@@ -1,0 +1,272 @@
+﻿using System;
+using System.IO;
+using System.Windows.Forms;
+
+namespace Review_Q3
+{
+    public partial class Form1 : Form
+    {
+        // store generated and winning numbers
+        private int[] userNumbers = new int[5];
+        private bool hasUserNumbers = false;
+
+        private int[] winningNumbers = new int[5];
+        private bool hasWinningNumbers = false;
+
+        private Random rng = new Random();
+
+        public Form1()
+        {
+            InitializeComponent();
+            // initial control state: disable Generate until a winning-number file is loaded
+            this.btnGenerate.Enabled = false;
+            this.btnLoadFile.Enabled = true;
+            this.btnExit.Enabled = true;
+            UpdateResultDisplay("等待操作...");
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            // generate 5 unique random numbers between 1 and 49
+            int count = 5;
+            int[] nums = new int[count];
+            int idx = 0;
+            while (idx < count)
+            {
+                int candidate = rng.Next(1, 50); // 1..49
+                bool exists = false;
+                for (int i = 0; i < idx; i++)
+                {
+                    if (nums[i] == candidate)
+                    {
+                        exists = true;
+                        break;
+                    }
+                }
+                if (!exists)
+                {
+                    nums[idx] = candidate;
+                    idx++;
+                }
+            }
+
+            // save and display
+            for (int i = 0; i < count; i++)
+            {
+                userNumbers[i] = nums[i];
+            }
+            hasUserNumbers = true;
+            DisplayUserNumbers();
+            UpdateResultDisplay("已產生號碼，準備進行比對。");
+
+            // reset previous winning state display
+            this.lstDrawnNumbers.Items.Clear();
+
+            // if winning numbers already loaded, compare immediately and show results
+            if (hasWinningNumbers)
+            {
+                CompareAndShowResult();
+            }
+            else
+            {
+                MessageBox.Show("請先按「開獎號碼」載入開獎號碼檔案，之後即可進行比對。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnLoadFile_Click(object sender, EventArgs e)
+        {
+            // Open file dialog
+            DialogResult dr = this.ofdOpenWinningNumbers.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+
+            string path = this.ofdOpenWinningNumbers.FileName;
+            try
+            {
+                // use File.OpenText to read the file as requested
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    string line;
+                    int lineIndex = 0;
+                    int[] temp = new int[5];
+                    while ((line = sr.ReadLine()) != null && lineIndex < 5)
+                    {
+                        line = line.Trim();
+                        if (line.Length == 0)
+                        {
+                            // skip empty lines
+                            continue;
+                        }
+
+                        int value;
+                        if (!int.TryParse(line, out value))
+                        {
+                            MessageBox.Show($"檔案格式錯誤：第 {lineIndex + 1} 行不是有效數字。", "讀檔錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        if (value < 1 || value > 49)
+                        {
+                            MessageBox.Show($"數字超出範圍（1-49）：第 {lineIndex + 1} 行為 {value}。", "讀檔錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        // check duplicates in file
+                        bool duplicate = false;
+                        for (int k = 0; k < lineIndex; k++)
+                        {
+                            if (temp[k] == value)
+                            {
+                                duplicate = true;
+                                break;
+                            }
+                        }
+                        if (duplicate)
+                        {
+                            MessageBox.Show($"檔案中包含重複號碼：第 {lineIndex + 1} 行的數字 {value}。", "讀檔錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        temp[lineIndex] = value;
+                        lineIndex++;
+                    }
+
+                    if (lineIndex < 5)
+                    {
+                        MessageBox.Show($"檔案內容不足：需要 5 個號碼，實際讀取到 {lineIndex} 個。", "讀檔錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // success - copy to winningNumbers
+                    for (int i = 0; i < 5; i++)
+                    {
+                        winningNumbers[i] = temp[i];
+                    }
+                    hasWinningNumbers = true;
+
+                    // display in listbox
+                    this.lstDrawnNumbers.Items.Clear();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        this.lstDrawnNumbers.Items.Add(winningNumbers[i].ToString());
+                    }
+
+                    UpdateResultDisplay("已載入開獎號碼。產生號碼功能已啟用。");
+
+                    // enable Generate now that file loaded
+                    this.btnGenerate.Enabled = true;
+
+                    // if user numbers exist, compare immediately
+                    if (hasUserNumbers)
+                    {
+                        CompareAndShowResult();
+                    }
+                    else
+                    {
+                        MessageBox.Show("已載入開獎號碼，請按「產生號碼」以產生你的號碼進行比對。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("找不到指定的檔案。", "讀檔錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("讀檔時發生 IO 錯誤：" + ex.Message, "讀檔錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("讀檔時發生未預期錯誤：" + ex.Message, "讀檔錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            var r = MessageBox.Show("確定要離開程式嗎？", "離開", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void DisplayUserNumbers()
+        {
+            // assign to labels - ensure mapping of 5 numbers to labels
+            if (userNumbers.Length >= 1) this.lblNumber1.Text = userNumbers[0].ToString();
+            if (userNumbers.Length >= 2) this.lblNumber2.Text = userNumbers[1].ToString();
+            if (userNumbers.Length >= 3) this.lblNumber3.Text = userNumbers[2].ToString();
+            if (userNumbers.Length >= 4) this.lblNumber4.Text = userNumbers[3].ToString();
+            if (userNumbers.Length >= 5) this.lblNumber5.Text = userNumbers[4].ToString();
+        }
+
+        private void CompareAndShowResult()
+        {
+            // count matches and collect matched numbers
+            int matchCount = 0;
+            string matched = string.Empty;
+            for (int i = 0; i < 5; i++)
+            {
+                int user = userNumbers[i];
+                for (int j = 0; j < 5; j++)
+                {
+                    if (user == winningNumbers[j])
+                    {
+                        matchCount++;
+                        if (matched.Length == 0)
+                        {
+                            matched = user.ToString();
+                        }
+                        else
+                        {
+                            matched += ", " + user.ToString();
+                        }
+                        break;
+                    }
+                }
+            }
+
+            string prize;
+            if (matchCount == 5)
+            {
+                prize = "頭獎（Jackpot）";
+            }
+            else if (matchCount == 4)
+            {
+                prize = "二獎";
+            }
+            else if (matchCount == 3)
+            {
+                prize = "三獎";
+            }
+            else
+            {
+                prize = "未中獎";
+            }
+
+            // format display similar to provided image
+            string resultText = "比對結果：\r\n" + $"中{matchCount}個號碼\r\n";
+            if (matchCount > 0)
+            {
+                resultText += "中獎號碼： " + matched;
+            }
+            else
+            {
+                resultText += "未中獎";
+            }
+
+            UpdateResultDisplay(resultText);
+            MessageBox.Show(resultText, "比對結果", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void UpdateResultDisplay(string text)
+        {
+            if (this.lblResultDisplay != null)
+            {
+                this.lblResultDisplay.Text = text;
+            }
+        }
+    }
+}
