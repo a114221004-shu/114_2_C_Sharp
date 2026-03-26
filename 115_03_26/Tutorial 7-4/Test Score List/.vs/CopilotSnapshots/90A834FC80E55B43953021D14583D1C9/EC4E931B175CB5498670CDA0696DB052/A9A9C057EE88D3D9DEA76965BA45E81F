@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using System.Linq.Expressions;
+
+namespace Test_Score_List
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+
+
+
+        // 讀取分數清單的方法，將檔案中的每一行轉為 int 並加入傳入的 List
+        private void ReadScores(List<int> scoresList)
+        {
+            string filePath = "TestScores.txt"; // 要讀取的檔案名稱
+            try
+            {
+                using (StreamReader reader = File.OpenText(filePath))
+                {
+                    string line; // 暫存每一行的字串
+                    // 從檔案逐行讀取分數，直到檔案結束
+                    while (!reader.EndOfStream)
+                    {
+                        // 將讀取到的字串轉為 int，並加入清單
+                        scoresList.Add(int.Parse(reader.ReadLine()));
+                    }
+                }
+         
+            }
+            catch (Exception ex)
+            {
+                // 若讀檔發生錯誤，顯示錯誤訊息（繁體中文）
+                MessageBox.Show("讀取檔案發生錯誤：" + ex.Message);
+            }
+        }
+
+
+        // 點選「取得成績」按鈕時觸發，負責讀取、計算與顯示成績相關資訊
+        private void getScoresButton_Click(object sender, EventArgs e)
+        {
+            double averageScore;    // 用來儲存平均分數
+            int numAboveAverage;    // 高於平均的分數數量
+            int numBelowAverage;    // 低於平均的分數數量
+
+            // 建立 List 來儲存分數
+            List<int> scoresList = new List<int>();
+
+            // 讀取檔案中的分數到 List
+            ReadScores(scoresList);
+
+            // 顯示分數清單
+            DisplayScores(scoresList);
+
+            // 計算並顯示平均分數
+            averageScore = Average(scoresList);
+            averageLabel.Text = averageScore.ToString("n1");
+
+            // 計算並顯示高於平均的分數數量
+            numAboveAverage = AboveAverage(scoresList, averageScore);
+            aboveAverageLabel.Text = numAboveAverage.ToString();
+
+            // 計算並顯示低於平均的分數數量
+            numBelowAverage = BelowAverage(scoresList);
+            belowAverageLabel.Text = numBelowAverage.ToString();
+        }
+
+        // 點選「離開」按鈕時關閉表單
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉視窗
+            this.Close();
+        }
+    }
+}

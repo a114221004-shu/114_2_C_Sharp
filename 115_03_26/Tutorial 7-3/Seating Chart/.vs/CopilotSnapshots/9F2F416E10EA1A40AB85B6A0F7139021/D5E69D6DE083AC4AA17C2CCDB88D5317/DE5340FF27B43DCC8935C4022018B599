@@ -1,0 +1,181 @@
+﻿namespace Seating_Chart
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            // ===== 以下為元件初始化 (已將文字改為繁體中文，字型大小改為 18) =====
+            // 註解均以繁體中文撰寫，說明每個元件的用途與調整理由。
+            this.airplanePictureBox = new System.Windows.Forms.PictureBox();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.seatPriceDescriptionLabel = new System.Windows.Forms.Label();
+            this.colPromptLabel = new System.Windows.Forms.Label();
+            this.rowPromptLabel = new System.Windows.Forms.Label();
+            this.colTextBox = new System.Windows.Forms.TextBox();
+            this.rowTextBox = new System.Windows.Forms.TextBox();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.displayPriceButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.airplanePictureBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // airplanePictureBox
+            // 
+            // 顯示飛機座位圖的 PictureBox，保留原本影像並置於表單背景左上。
+            this.airplanePictureBox.Image = global::Seating_Chart.Properties.Resources.Airplane;
+            this.airplanePictureBox.Location = new System.Drawing.Point(0, 0);
+            this.airplanePictureBox.Name = "airplanePictureBox";
+            this.airplanePictureBox.Size = new System.Drawing.Size(432, 540);
+            this.airplanePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.airplanePictureBox.TabIndex = 0;
+            this.airplanePictureBox.TabStop = false;
+            // 
+            // priceLabel
+            // 
+            // 顯示所選座位價格的標籤，已改為繁體中文字型並放大以利閱讀。
+            this.priceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.priceLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.priceLabel.Location = new System.Drawing.Point(340, 12);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(80, 36);
+            this.priceLabel.TabIndex = 21;
+            this.priceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // seatPriceDescriptionLabel
+            // 
+            // 說明價格欄位用途的描述標籤，顯示「座位價格」。
+            this.seatPriceDescriptionLabel.AutoSize = true;
+            this.seatPriceDescriptionLabel.BackColor = System.Drawing.Color.White;
+            this.seatPriceDescriptionLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.seatPriceDescriptionLabel.Location = new System.Drawing.Point(260, 16);
+            this.seatPriceDescriptionLabel.Name = "seatPriceDescriptionLabel";
+            this.seatPriceDescriptionLabel.Size = new System.Drawing.Size(90, 31);
+            this.seatPriceDescriptionLabel.TabIndex = 20;
+            this.seatPriceDescriptionLabel.Text = "座位價格";
+            // 
+            // colPromptLabel
+            // 
+            // 提示使用者輸入欄位（Column）的標籤，文字改為繁體中文並放大。
+            this.colPromptLabel.AutoSize = true;
+            this.colPromptLabel.BackColor = System.Drawing.Color.White;
+            this.colPromptLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.colPromptLabel.Location = new System.Drawing.Point(12, 62);
+            this.colPromptLabel.Name = "colPromptLabel";
+            this.colPromptLabel.Size = new System.Drawing.Size(110, 31);
+            this.colPromptLabel.TabIndex = 19;
+            this.colPromptLabel.Text = "輸入欄位";
+            // 
+            // rowPromptLabel
+            // 
+            // 提示使用者輸入列（Row）的標籤，文字改為繁體中文並放大。
+            this.rowPromptLabel.AutoSize = true;
+            this.rowPromptLabel.BackColor = System.Drawing.Color.White;
+            this.rowPromptLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rowPromptLabel.Location = new System.Drawing.Point(12, 18);
+            this.rowPromptLabel.Name = "rowPromptLabel";
+            this.rowPromptLabel.Size = new System.Drawing.Size(84, 31);
+            this.rowPromptLabel.TabIndex = 18;
+            this.rowPromptLabel.Text = "輸入列";
+            // 
+            // colTextBox
+            // 
+            // 用於輸入欄位編號的文字方塊，字型放大以利輸入辨識，並擴增高度。
+            this.colTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.colTextBox.Location = new System.Drawing.Point(140, 58);
+            this.colTextBox.Name = "colTextBox";
+            this.colTextBox.Size = new System.Drawing.Size(120, 39);
+            this.colTextBox.TabIndex = 17;
+            // 
+            // rowTextBox
+            // 
+            // 用於輸入列編號的文字方塊，字型放大以利輸入辨識，並擴增高度。
+            this.rowTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rowTextBox.Location = new System.Drawing.Point(140, 14);
+            this.rowTextBox.Name = "rowTextBox";
+            this.rowTextBox.Size = new System.Drawing.Size(120, 39);
+            this.rowTextBox.TabIndex = 16;
+            // 
+            // exitButton
+            // 
+            // 結束程式的按鈕，文字改為「離開」，並放大按鈕以符合 18pt 的字型顯示。
+            this.exitButton.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.exitButton.Location = new System.Drawing.Point(220, 552);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(100, 40);
+            this.exitButton.TabIndex = 23;
+            this.exitButton.Text = "離開";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // displayPriceButton
+            // 
+            // 顯示座位價格的按鈕，文字改為「顯示價格」，並放大按鈕以符合 18pt 的字型顯示。
+            this.displayPriceButton.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.displayPriceButton.Location = new System.Drawing.Point(120, 552);
+            this.displayPriceButton.Name = "displayPriceButton";
+            this.displayPriceButton.Size = new System.Drawing.Size(100, 40);
+            this.displayPriceButton.TabIndex = 22;
+            this.displayPriceButton.Text = "顯示價格";
+            this.displayPriceButton.UseVisualStyleBackColor = true;
+            this.displayPriceButton.Click += new System.EventHandler(this.displayPriceButton_Click);
+            // 
+            // Form1
+            // 
+            // 調整表單標題為繁體中文，並擴增表單高度以容納放大的字型與按鈕。
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(434, 640);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.displayPriceButton);
+            this.Controls.Add(this.priceLabel);
+            this.Controls.Add(this.seatPriceDescriptionLabel);
+            this.Controls.Add(this.colPromptLabel);
+            this.Controls.Add(this.rowPromptLabel);
+            this.Controls.Add(this.colTextBox);
+            this.Controls.Add(this.rowTextBox);
+            this.Controls.Add(this.airplanePictureBox);
+            this.Name = "Form1";
+            this.Text = "座位表";
+            ((System.ComponentModel.ISupportInitialize)(this.airplanePictureBox)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.PictureBox airplanePictureBox;
+        internal System.Windows.Forms.Label priceLabel;
+        internal System.Windows.Forms.Label seatPriceDescriptionLabel;
+        internal System.Windows.Forms.Label colPromptLabel;
+        internal System.Windows.Forms.Label rowPromptLabel;
+        internal System.Windows.Forms.TextBox colTextBox;
+        internal System.Windows.Forms.TextBox rowTextBox;
+        internal System.Windows.Forms.Button exitButton;
+        internal System.Windows.Forms.Button displayPriceButton;
+    }
+}
+
