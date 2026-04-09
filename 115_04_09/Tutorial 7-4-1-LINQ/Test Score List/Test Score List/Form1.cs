@@ -1,0 +1,218 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using System.Linq.Expressions;
+
+namespace Test_Score_List
+{
+    public partial class Form1 : Form
+    {
+        // 儲存讀取到的學生學號與分數清單，供多個事件處理器使用
+        private List<StudentScore> scoresList = new List<StudentScore>();
+
+        // 內部類別：儲存學號與分數的結構
+        private class StudentScore
+        {
+            public string Id { get; set; }
+            public int Score { get; set; }
+
+            public StudentScore(string id, int score)
+            {
+                Id = id;
+                Score = score;
+            }
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+            // 在建構子綁定搜尋按鈕的事件處理器（設計檔可能未綁定）
+            this.searchButton.Click += new EventHandler(this.searchButton_Click);
+        }
+
+
+
+        // 讀取分數清單的方法，將檔案中的每一行解析為「學號 分數」並加入傳入的 List
+        private void ReadScores(List<StudentScore> scoresList)
+        {
+            string filePath = "TestScores.txt"; // 要讀取的檔案名稱
+            try
+            {
+                using (StreamReader reader = File.OpenText(filePath))
+                {
+                    // 從檔案逐行讀取，每一行應該為：學號 空白 分數
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (string.IsNullOrWhiteSpace(line))
+                            continue;
+
+                        // 以空白分隔，允許多個空白，取第一個欄位為學號，最後一個欄位為分數
+                        string[] parts = line.Trim().Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
+                        if (parts.Length < 2)
+                            continue; // 欄位不足，略過
+
+                        string id = parts[0];
+                        int score;
+                        // 嘗試解析最後一個欄位為整數分數
+                        if (int.TryParse(parts[parts.Length - 1], out score))
+                        {
+                            scoresList.Add(new StudentScore(id, score));
+                        }
+                        // 若解析失敗則略過該行
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // 若讀檔發生錯誤，顯示錯誤訊息（繁體中文）
+                MessageBox.Show("讀取檔案發生錯誤：" + ex.Message);
+            }
+        }
+
+        // 顯示分數清單到 ListBox（顯示用，若無資料則顯示提示）
+        // 輸出格式："學號 空格 分數"
+        private void DisplayScores(List<StudentScore> scoresList)
+        {
+            testScoresListBox.Items.Clear();
+            if (scoresList == null || scoresList.Count == 0)
+            {
+                // 若無分數則顯示提示文字
+                testScoresListBox.Items.Add("無分數資料");
+                return;
+            }
+
+            // 將每一個學生的學號與分數加入 ListBox，格式為 "學號 分數"
+            foreach (var item in scoresList)
+            {
+                testScoresListBox.Items.Add($"{item.Id} {item.Score}");
+            }
+        }
+
+        // 計算傳入清單的平均值，若無資料則回傳 0
+        private double Average(List<StudentScore> scoresList)
+        {
+            if (scoresList == null || scoresList.Count == 0)
+                return 0.0;
+
+            // 使用 LINQ 查詢語法計算平均（針對 Score 欄位）
+            var scoreQuery = from s in scoresList
+                             select s.Score;
+            return scoreQuery.Average();
+        }
+
+        // 計算高於傳入平均值的分數數量（改用 LINQ 查詢語法）
+        private int AboveAverage(List<StudentScore> scoresList, double averageScore)
+        {
+            if (scoresList == null || scoresList.Count == 0)
+                return 0;
+
+            var query = from s in scoresList
+                        where s.Score > averageScore
+                        select s;
+            return query.Count();
+        }
+
+        // 計算低於平均分數的數量（會重新計算平均，改用 LINQ 查詢語法）
+        private int BelowAverage(List<StudentScore> scoresList)
+        {
+            if (scoresList == null || scoresList.Count == 0)
+                return 0;
+
+            double avg = Average(scoresList);
+            var query = from s in scoresList
+                        where s.Score < avg
+                        select s;
+            return query.Count();
+        }
+
+        // 點選「取得成績」按鈕時觸發，負責讀取、計算與顯示成績相關資訊
+        private void getScoresButton_Click(object sender, EventArgs e)
+        {
+            double averageScore;    // 用來儲存平均分數
+            int numAboveAverage;    // 高於平均的分數數量
+            int numBelowAverage;    // 低於平均的分數數量
+
+            // 清空現有的分數清單，準備重新讀取
+            scoresList.Clear();
+
+            // 讀取檔案中的分數到 scoresList 欄位（每一項包含學號與分數）
+            ReadScores(scoresList);
+
+            // 顯示分數清單（顯示為 "學號 分數"）
+            DisplayScores(scoresList);
+
+            // 計算並顯示平均分數
+            averageScore = Average(scoresList);
+            averageLabel.Text = averageScore.ToString("n1");
+
+            // 計算並顯示高於平均的分數數量
+            numAboveAverage = AboveAverage(scoresList, averageScore);
+            aboveAverageLabel.Text = numAboveAverage.ToString();
+
+            // 計算並顯示低於平均的分數數量
+            numBelowAverage = BelowAverage(scoresList);
+            belowAverageLabel.Text = numBelowAverage.ToString();
+        }
+
+        // 點選「離開」按鈕時關閉表單
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉視窗
+            this.Close();
+        }
+
+        // 搜尋按鈕的事件處理器：搜尋使用者輸入的分數，若找到則顯示所有符合項目的所在位置與學號，否則顯示「分數不存在」
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            int searchScore; // 用來儲存使用者輸入的分數
+
+            if (!int.TryParse(searchTextBox.Text, out searchScore))
+            {
+                searchResultLabel.Text = "請輸入有效的整數分數";
+                return;
+            }
+
+            if (scoresList == null || scoresList.Count == 0)
+            {
+                // 尚未讀取或無資料，視為不存在
+                searchResultLabel.Text = "分數不存在";
+                return;
+            }
+
+            // 使用 LINQ 查詢語法找出所有符合分數的 StudentScore 物件
+            var matches = from s in scoresList
+                          where s.Score == searchScore
+                          select s;
+
+            if (!matches.Any())
+            {
+                searchResultLabel.Text = "分數不存在";
+                return;
+            }
+
+            // 組成結果字串，列出每一筆的清單位置（以 1 為基底）與學號
+            List<string> resultParts = new List<string>();
+            foreach (var m in matches)
+            {
+                int position = scoresList.IndexOf(m); // 取得在原始列表的位置（0 為基底）
+                resultParts.Add($"第{position + 1}筆({m.Id})");
+            }
+
+            searchResultLabel.Text = $"找到 {resultParts.Count} 筆：{string.Join(", ", resultParts)}";
+        }
+
+        private void searchDescriptionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
