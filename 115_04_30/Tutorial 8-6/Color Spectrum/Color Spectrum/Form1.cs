@@ -12,8 +12,8 @@ namespace Color_Spectrum
 {
     enum Spectrum 
     { 
-        Red, Orange, Yellow, Green,
-        Blue, Indigo, Violet 
+        Red = 10, Orange = 20, Yellow = 30, Green = 40,
+        Blue = 50, Indigo = 60, Violet = 70 
     }
 
     public partial class Form1 : Form
@@ -27,7 +27,7 @@ namespace Color_Spectrum
         // name of a color.
         private void DisplayColor(Spectrum color)
         {
-            colorLabel.Text = color.ToString();
+            colorLabel.Text = ((int)color).ToString() +color.ToString();
         }
 
         private void redLabel_Click(object sender, EventArgs e)
