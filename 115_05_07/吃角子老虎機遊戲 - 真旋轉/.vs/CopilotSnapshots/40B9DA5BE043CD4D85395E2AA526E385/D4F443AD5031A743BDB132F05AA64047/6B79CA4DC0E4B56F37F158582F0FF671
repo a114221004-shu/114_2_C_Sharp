@@ -1,0 +1,187 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace 吃角子老虎機遊戲
+{
+    public partial class Form1 : Form
+    {
+        private int balance = 0;
+        private int totalDeposited = 0;
+        private int totalSpins = 0;
+        private int winCount = 0;
+        private int lastPrize = 0;
+        private Random rng = new Random();
+
+
+        private int n1 = 0, n2 = 0, n3 = 0;
+        private int prize = 0;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            this.comboBox_bet.Items.Clear();
+            this.comboBox_bet.Items.AddRange(new object[] { "$1", "$5", "$10", "$50" });
+            this.comboBox_bet.SelectedIndex = 0;
+
+            this.button_deposit.Click += button_deposit_Click;
+            this.comboBox_bet.SelectedIndexChanged += comboBox_bet_SelectedIndexChanged;
+            this.button1.Click += button1_Click;
+
+
+            GetImage();
+            prize = 0;
+            UpdateUI();
+            UpdateStats();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            int netGain = balance - totalDeposited;
+            string netLabel;
+            string netAmount;
+            if (netGain < 0)
+            {
+                netLabel = "虧損";
+                netAmount = (-netGain).ToString("C");
+            }
+            else if (netGain > 0)
+            {
+                netLabel = "盈餘";
+                netAmount = netGain.ToString("C");
+            }
+            else
+            {
+                netLabel = "持平";
+                netAmount = netGain.ToString("C");
+            }
+
+            string msg = string.Format("累計存入：{0}\r\n目前餘額：{1}\r\n{2}：{3}\r\n\r\n旋轉次數：{4} 次　中獎次數：{5} 次",
+                totalDeposited.ToString("C"), balance.ToString("C"), netLabel, netAmount, totalSpins, winCount);
+
+            MessageBox.Show(msg, "結算摘要", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private int GetBetAmount()
+        {
+            if (this.comboBox_bet.SelectedItem == null) return 1;
+            string s = this.comboBox_bet.SelectedItem.ToString();
+            if (s.StartsWith("$")) s = s.Substring(1);
+            int v;
+            if (!int.TryParse(s, out v)) v = 1;
+            return v;
+        }
+
+        private void GetImage()
+        {
+            int count = Math.Max(1, this.imageList1.Images.Count);
+            if (this.imageList1.Images.Count == 0)
+            {
+                this.pictureBox1.Image = null;
+                this.pictureBox2.Image = null;
+                this.pictureBox3.Image = null;
+                return;
+            }
+
+            n1 = rng.Next(count);
+            n2 = rng.Next(count);
+            n3 = rng.Next(count);
+
+            this.pictureBox1.Image = (Image)this.imageList1.Images[n1];
+            this.pictureBox2.Image = (Image)this.imageList1.Images[n2];
+            this.pictureBox3.Image = (Image)this.imageList1.Images[n3];
+        }
+
+        private int CheckWinner(int bet)
+        {
+            int pay = 0;
+            if (n1 == n2 && n2 == n3)
+            {
+                pay = bet * 10;
+            }
+            else if (n1 == n2 || n1 == n3 || n2 == n3)
+            {
+                pay = bet * 2;
+            }
+            return pay;
+        }
+
+        private void UpdateUI()
+        {
+            this.label_balance.Text = "餘額：" + balance.ToString("C");
+            this.label_lastWin.Text = "本次獲得：" + prize.ToString("C");
+
+            int bet = GetBetAmount();
+            this.button1.Enabled = (balance >= bet && balance > 0);
+        }
+
+        private void UpdateStats()
+        {
+            this.label_totalSpins.Text = $"旋轉：{totalSpins} 次";
+            this.label_winCount.Text = $"中獎：{winCount} 次";
+            double rate = 0.0;
+            if (totalSpins > 0) rate = (double)winCount / totalSpins * 100.0;
+            this.label_winRate.Text = $"勝率：{rate:F1}%";
+        }
+
+        private void comboBox_bet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateUI();
+        }
+
+        private void button_deposit_Click(object sender, EventArgs e)
+        {
+            string txt = this.textBox_deposit.Text.Trim();
+            int v;
+            if (!int.TryParse(txt, out v) || v <= 0)
+            {
+                MessageBox.Show("請輸入有效的存入金額（必須為正整數）", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            balance += v;
+            totalDeposited += v;
+            this.textBox_deposit.Text = string.Empty;
+            UpdateUI();
+            UpdateStats();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int bet = GetBetAmount();
+            if (balance < bet) { UpdateUI(); return; }
+
+
+            balance -= bet;
+
+
+            GetImage();
+
+
+            prize = CheckWinner(bet);
+            if (prize > 0)
+            {
+                balance += prize;
+                winCount++;
+            }
+
+            totalSpins++;
+
+            UpdateUI();
+            UpdateStats();
+        }
+    }
+}
