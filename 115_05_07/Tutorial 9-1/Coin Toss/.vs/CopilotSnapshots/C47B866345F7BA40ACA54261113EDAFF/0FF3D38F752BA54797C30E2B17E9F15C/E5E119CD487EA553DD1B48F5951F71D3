@@ -1,0 +1,99 @@
+﻿namespace Coin_Toss
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            // 以下為元件初始化與屬性設定。
+            // 註解皆為繁體中文，說明每個元件的用途與調整的理由。
+
+            this.outputListBox = new System.Windows.Forms.ListBox();
+            this.tossButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // outputListBox
+            // 
+            // 設定列表框，顯示每次擲硬幣的結果。
+            // 將字型改為繁體中文字型（Microsoft JhengHei），字型大小設為 18，
+            // 使文字清晰可讀；調整 Size 與 Location 以配合較大的字型與按鈕。
+            this.outputListBox.FormattingEnabled = true;
+            this.outputListBox.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.outputListBox.ItemHeight = 30;
+            this.outputListBox.Location = new System.Drawing.Point(20, 12);
+            this.outputListBox.Name = "outputListBox";
+            this.outputListBox.Size = new System.Drawing.Size(240, 154);
+            this.outputListBox.TabIndex = 0;
+            // 
+            // tossButton
+            // 
+            // 擲五次按鈕：使用繁體中文標示「擲五次」，字型與大小與列表一致，
+            // 調整按鈕大小以便顯示較大的文字並提供良好點擊範圍。
+            this.tossButton.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tossButton.Location = new System.Drawing.Point(20, 175);
+            this.tossButton.Name = "tossButton";
+            this.tossButton.Size = new System.Drawing.Size(110, 48);
+            this.tossButton.TabIndex = 1;
+            this.tossButton.Text = "擲五次";
+            this.tossButton.UseVisualStyleBackColor = true;
+            this.tossButton.Click += new System.EventHandler(this.tossButton_Click);
+            // 
+            // exitButton
+            // 
+            // 結束按鈕：使用繁體中文標示「結束」，字型與大小一致，放置於擲按鈕旁以利操作。
+            this.exitButton.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.exitButton.Location = new System.Drawing.Point(150, 175);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(110, 48);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.Text = "結束";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // Form1
+            // 
+            // 主視窗標題改為繁體中文「擲硬幣」，並適度放大視窗以容納較大型元件與字型。
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 240);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.tossButton);
+            this.Controls.Add(this.outputListBox);
+            this.Name = "Form1";
+            this.Text = "擲硬幣";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ListBox outputListBox;
+        private System.Windows.Forms.Button tossButton;
+        private System.Windows.Forms.Button exitButton;
+    }
+}
+
