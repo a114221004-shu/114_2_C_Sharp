@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Coin_Toss
+{
+    class Coin
+    {
+        private string sideUp;
+
+        public Coin()
+        {
+            // 將初始面設定為「正面」。
+            sideUp = "Heads";
+        }
+        public void Toss()
+        {
+            // 建立隨機數產生器。
+            Random rand = new Random();
+            // 產生隨機數，結果為 0 或 1。
+            int tossResult = rand.Next(2);
+            // 根據隨機結果設定顯示面。
+            if (tossResult == 0)
+            {
+                sideUp = "Heads";
+            }
+            else
+            {
+                sideUp = "Tails";
+            }
+        }
+
+        public string GetSideUp()
+        {
+            return sideUp;
+        }
+
+    }
+}
+
+

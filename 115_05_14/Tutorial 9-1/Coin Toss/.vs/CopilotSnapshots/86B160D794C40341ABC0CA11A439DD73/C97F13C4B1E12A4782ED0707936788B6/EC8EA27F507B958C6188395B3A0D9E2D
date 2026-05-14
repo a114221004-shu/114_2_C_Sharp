@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Coin_Toss
+{
+    class Coin
+    {
+        private string sideUp;
+
+        public Coin()
+        {
+            // Set the initial side up to heads.
+            sideUp = "Heads";
+        }
+        public void Toss()
+        {
+            // Create a random number generator.
+            Random rand = new Random();
+            // Generate a random number, either 0 or 1.
+            int tossResult = rand.Next(2);
+            // Set the side up based on the random number.
+            if (tossResult == 0)
+            {
+                sideUp = "Heads";
+            }
+            else
+            {
+                sideUp = "Tails";
+            }
+        }
+
+        public string GetSideUp()
+        {
+            return sideUp;
+        }
+
+    }
+}
+
+

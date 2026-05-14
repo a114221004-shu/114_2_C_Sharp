@@ -1,0 +1,104 @@
+﻿namespace Coin_Toss
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        ///
+        /// 以下 InitializeComponent 方法已依據需求做修改：
+        /// - 將所有元件的 Text 屬性改為繁體中文。
+        /// - 將所有元件與表單的字型設為繁體字型 "Microsoft JhengHei"，字型大小 18pt。
+        /// - 適度調整每個元件的大小與位置，以配合放大後的字型。
+        /// - 在程式碼中以繁體中文加入詳細註解，說明變更內容與原因。
+        ///
+        /// 注意：除了上述要求的欄位以外，其它程式碼保持不變，以免影響自動產生的設計師行為。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.outputListBox = new System.Windows.Forms.ListBox();
+            this.tossButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // outputListBox
+            // 
+            // 註解：將 ListBox 的顯示文字改為繁體中文（ListBox 本身通常不顯示 Text，但為一致性仍設定），
+            // 同時將字型設為繁體字型並放大至 18pt，並增大元件尺寸以容納較大的字體內容。
+            this.outputListBox.FormattingEnabled = true;
+            this.outputListBox.Location = new System.Drawing.Point(20, 12);
+            this.outputListBox.Name = "outputListBox";
+            this.outputListBox.Size = new System.Drawing.Size(340, 150);
+            this.outputListBox.TabIndex = 0;
+            this.outputListBox.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputListBox.Text = "結果";
+            // 
+            // tossButton
+            // 
+            // 註解：按鈕文字改為繁體中文「擲五次」，字型與大小統一為 18pt，並調整按鈕大小與位置以符合視覺與觸控需求。
+            this.tossButton.Location = new System.Drawing.Point(20, 175);
+            this.tossButton.Name = "tossButton";
+            this.tossButton.Size = new System.Drawing.Size(170, 50);
+            this.tossButton.TabIndex = 1;
+            this.tossButton.Text = "擲五次";
+            this.tossButton.UseVisualStyleBackColor = true;
+            this.tossButton.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tossButton.Click += new System.EventHandler(this.tossButton_Click);
+            // 
+            // exitButton
+            // 
+            // 註解：按鈕文字改為繁體中文「離開」，字型與大小一致，並將按鈕放置於右側以維持常見的 UI 佈局。
+            this.exitButton.Location = new System.Drawing.Point(190, 175);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(170, 50);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.Text = "離開";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // Form1
+            // 
+            // 註解：表單標題改為繁體中文「擲硬幣」，並將表單的預設字型設為 18pt，以便所有子元件繼承一致的字型設定。
+            // 同時放大表單 ClientSize 以容納放大的元件與字型。
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(380, 240);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.tossButton);
+            this.Controls.Add(this.outputListBox);
+            this.Name = "Form1";
+            this.Text = "擲硬幣";
+            this.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ListBox outputListBox;
+        private System.Windows.Forms.Button tossButton;
+        private System.Windows.Forms.Button exitButton;
+    }
+}
+
