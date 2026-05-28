@@ -1,0 +1,6 @@
+C:\Users\m303\Desktop\114_2_C_Sharp\115_05_28\MutiFormVarlable\MutiFormVarlable\obj\Debug\MutiFormVarlable.csproj.AssemblyReference.cache
+C:\Users\m303\Desktop\114_2_C_Sharp\115_05_28\MutiFormVarlable\MutiFormVarlable\obj\Debug\MutiFormVarlable.Secondform.resources
+C:\Users\m303\Desktop\114_2_C_Sharp\115_05_28\MutiFormVarlable\MutiFormVarlable\obj\Debug\MutiFormVarlable.MainForm.resources
+C:\Users\m303\Desktop\114_2_C_Sharp\115_05_28\MutiFormVarlable\MutiFormVarlable\obj\Debug\MutiFormVarlable.Properties.Resources.resources
+C:\Users\m303\Desktop\114_2_C_Sharp\115_05_28\MutiFormVarlable\MutiFormVarlable\obj\Debug\MutiFormVarlable.csproj.GenerateResource.cache
+C:\Users\m303\Desktop\114_2_C_Sharp\115_05_28\MutiFormVarlable\MutiFormVarlable\obj\Debug\MutiFormVarlable.csproj.CoreCompileInputs.cache
