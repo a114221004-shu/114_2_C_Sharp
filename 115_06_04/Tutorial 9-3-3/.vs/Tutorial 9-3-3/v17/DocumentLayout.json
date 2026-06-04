@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|c:\\users\\m303\\desktop\\115_06_04\\tutorial 9-3-3\\tutorial 9-3-3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|solutionrelative:tutorial 9-3-3\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|c:\\users\\m303\\desktop\\115_06_04\\tutorial 9-3-3\\tutorial 9-3-3\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|solutionrelative:tutorial 9-3-3\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|c:\\users\\m303\\desktop\\115_06_04\\tutorial 9-3-3\\tutorial 9-3-3\\withdrawform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|solutionrelative:tutorial 9-3-3\\withdrawform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|c:\\users\\m303\\desktop\\115_06_04\\tutorial 9-3-3\\tutorial 9-3-3\\openaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|solutionrelative:tutorial 9-3-3\\openaccountform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|c:\\users\\m303\\desktop\\115_06_04\\tutorial 9-3-3\\tutorial 9-3-3\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|solutionrelative:tutorial 9-3-3\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|c:\\users\\m303\\desktop\\115_06_04\\tutorial 9-3-3\\tutorial 9-3-3\\depositform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F87E643A-EB20-4C94-81AB-F8C80923E56E}|Tutorial 9-3-3\\Tutorial 9-3-3.csproj|solutionrelative:tutorial 9-3-3\\depositform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "Tutorial 9-3-3\\MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\MainForm.Designer.cs",
+              "RelativeToolTip": "Tutorial 9-3-3\\MainForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T06:45:54.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WithdrawForm.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\WithdrawForm.cs",
+              "RelativeDocumentMoniker": "Tutorial 9-3-3\\WithdrawForm.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\WithdrawForm.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Tutorial 9-3-3\\WithdrawForm.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T06:45:46.732Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OpenAccountForm.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\OpenAccountForm.cs",
+              "RelativeDocumentMoniker": "Tutorial 9-3-3\\OpenAccountForm.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\OpenAccountForm.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Tutorial 9-3-3\\OpenAccountForm.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T06:45:30.236Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\MainForm.cs",
+              "RelativeDocumentMoniker": "Tutorial 9-3-3\\MainForm.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\MainForm.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Tutorial 9-3-3\\MainForm.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T06:40:31.706Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BankAccount.cs",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\BankAccount.cs",
+              "RelativeDocumentMoniker": "Tutorial 9-3-3\\BankAccount.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\BankAccount.cs",
+              "RelativeToolTip": "Tutorial 9-3-3\\BankAccount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T06:41:31.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DepositForm.cs [\u8A2D\u8A08]",
+              "DocumentMoniker": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\DepositForm.cs",
+              "RelativeDocumentMoniker": "Tutorial 9-3-3\\DepositForm.cs",
+              "ToolTip": "C:\\Users\\m303\\Desktop\\115_06_04\\Tutorial 9-3-3\\Tutorial 9-3-3\\DepositForm.cs [\u8A2D\u8A08]",
+              "RelativeToolTip": "Tutorial 9-3-3\\DepositForm.cs [\u8A2D\u8A08]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T06:45:04.782Z",
+              "EditorCaption": " [\u8A2D\u8A08]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
