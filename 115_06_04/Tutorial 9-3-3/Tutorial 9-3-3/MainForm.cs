@@ -12,9 +12,54 @@ namespace Tutorial_9_3_3
 {
     public partial class MainForm : Form
     {
+        public List<BankAccount> accounts  = new List<BankAccount>();
         public MainForm()
         {
             InitializeComponent();
+            // 連接按鈕事件
+            this.buttonOpen.Click += buttonOpen_Click;
+            this.buttonExit.Click += buttonExit_Click;
+            this.buttonDeposit.Click += buttonDeposit_Click;
         }
+
+        private void labelAccountCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            // 開啟建立帳戶表單，並傳入共用的帳戶列表參考
+            using (OpenAccountForm openForm = new OpenAccountForm(this.accounts))
+            {
+                openForm.ShowDialog(this);
+            }
+
+            // 更新已開戶用戶數顯示
+            this.labelAccountCount.Text = $"已開戶用戶數: {this.accounts.Count}";
+        }
+
+        private void buttonDeposit_Click(object sender, EventArgs e)
+        {
+            using (DepositForm depositForm = new DepositForm(this.accounts))
+            {
+                depositForm.ShowDialog(this);
+            }
+
+            // 更新已開戶用戶數（帳戶數不變，但保持同步樣板）
+            this.labelAccountCount.Text = $"已開戶用戶數: {this.accounts.Count}";
+        }
+
+
     }
 }

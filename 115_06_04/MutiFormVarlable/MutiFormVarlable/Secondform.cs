@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MutiFormVarlable
+{
+    public partial class Secondform : Form
+    {
+        private MainForm mainForm;
+        public Secondform(MainForm form)
+        {
+            InitializeComponent();
+            this.mainForm = form;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Secondform_Load(object sender, EventArgs e)
+        {
+            label1.Text = mainForm?.userName ?? string.Empty;
+        }
+    }
+}

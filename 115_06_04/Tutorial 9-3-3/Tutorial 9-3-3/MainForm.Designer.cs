@@ -10,6 +10,7 @@
         private System.Windows.Forms.Button buttonDeposit;
         private System.Windows.Forms.Button buttonWithdraw;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelAccountCount;
 
         /// <summary>
         /// 清除任何使用中的資源。
@@ -36,6 +37,7 @@
             this.buttonDeposit = new System.Windows.Forms.Button();
             this.buttonWithdraw = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.labelAccountCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonOpen
@@ -47,6 +49,7 @@
             this.buttonOpen.TabIndex = 0;
             this.buttonOpen.Text = "開戶";
             this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
             // buttonDeposit
             // 
@@ -57,6 +60,7 @@
             this.buttonDeposit.TabIndex = 1;
             this.buttonDeposit.Text = "存款";
             this.buttonDeposit.UseVisualStyleBackColor = true;
+            this.buttonDeposit.Click += new System.EventHandler(this.buttonDeposit_Click);
             // 
             // buttonWithdraw
             // 
@@ -71,25 +75,40 @@
             // buttonExit
             // 
             this.buttonExit.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.buttonExit.Location = new System.Drawing.Point(606, 49);
+            this.buttonExit.Location = new System.Drawing.Point(224, 188);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(156, 81);
             this.buttonExit.TabIndex = 3;
             this.buttonExit.Text = "離開";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // labelAccountCount
+            // 
+            this.labelAccountCount.AutoSize = true;
+            this.labelAccountCount.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelAccountCount.Location = new System.Drawing.Point(165, 320);
+            this.labelAccountCount.Name = "labelAccountCount";
+            this.labelAccountCount.Size = new System.Drawing.Size(266, 36);
+            this.labelAccountCount.TabIndex = 4;
+            this.labelAccountCount.Text = "已開戶用戶數: 0";
+            this.labelAccountCount.Click += new System.EventHandler(this.labelAccountCount_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 188);
+            this.ClientSize = new System.Drawing.Size(651, 420);
+            this.Controls.Add(this.labelAccountCount);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonDeposit);
             this.Controls.Add(this.buttonWithdraw);
             this.Controls.Add(this.buttonExit);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

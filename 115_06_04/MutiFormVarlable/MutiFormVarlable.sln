@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutiFormVarlable", "MutiFormVarlable\MutiFormVarlable.csproj", "{B33B084A-9D80-48DB-AA3C-7ABB5C967B4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B33B084A-9D80-48DB-AA3C-7ABB5C967B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33B084A-9D80-48DB-AA3C-7ABB5C967B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33B084A-9D80-48DB-AA3C-7ABB5C967B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33B084A-9D80-48DB-AA3C-7ABB5C967B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3BFBFF9-2EA3-4968-8C3B-ABE31CA0E563}
+	EndGlobalSection
+EndGlobal

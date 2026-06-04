@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Tutorial_9_3_3
+{
+    public partial class OpenAccountForm : Form
+    {
+        private List<BankAccount> bankAccounts;
+        public OpenAccountForm(List<BankAccount> accounts)
+        {
+            InitializeComponent();
+            // 儲存來自主表單的帳戶列表參考
+            this.bankAccounts = accounts ?? new List<BankAccount>();
+        }
+
+        private void CreateAccountButton_Click(object sender, EventArgs e)
+        {
+            // 取得使用者輸入
+            string accountID = accountIDTextBox.Text.Trim();
+            string name = nameTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(accountID))
+            {
+                MessageBox.Show("請輸入帳號", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("請輸入姓名", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 解析開戶金額
+            if (!decimal.TryParse(balanceTextBox.Text.Trim(), out decimal initialAmount))
+            {
+                MessageBox.Show("請輸入有效的開戶金額", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 建立並加入新帳戶
+            BankAccount newAccount = new BankAccount(accountID, name, initialAmount);
+            bankAccounts.Add(newAccount);
+
+            // 在 balanceLabel 顯示建立成功的訊息
+            balanceLabel.Text = string.Format(
+                "帳戶建立成功!\n帳號：{0}\n姓名：{1}\n開戶金額：{2:C}",
+                accountID,
+                name,
+                initialAmount
+            );
+
+            // 清空輸入欄位
+            accountIDTextBox.Clear();
+            nameTextBox.Clear();
+            balanceTextBox.Clear();
+        }
+    }
+}

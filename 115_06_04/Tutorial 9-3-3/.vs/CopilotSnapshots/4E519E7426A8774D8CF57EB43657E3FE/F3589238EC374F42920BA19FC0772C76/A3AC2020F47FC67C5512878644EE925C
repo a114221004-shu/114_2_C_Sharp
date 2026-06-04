@@ -1,0 +1,99 @@
+﻿namespace Tutorial_9_3_3
+{
+    partial class MainForm
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button buttonOpen;
+        private System.Windows.Forms.Button buttonDeposit;
+        private System.Windows.Forms.Button buttonWithdraw;
+        private System.Windows.Forms.Button buttonExit;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.buttonOpen = new System.Windows.Forms.Button();
+            this.buttonDeposit = new System.Windows.Forms.Button();
+            this.buttonWithdraw = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // buttonOpen
+            // 
+            this.buttonOpen.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonOpen.Location = new System.Drawing.Point(44, 49);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(156, 81);
+            this.buttonOpen.TabIndex = 0;
+            this.buttonOpen.Text = "開戶";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeposit
+            // 
+            this.buttonDeposit.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonDeposit.Location = new System.Drawing.Point(224, 49);
+            this.buttonDeposit.Name = "buttonDeposit";
+            this.buttonDeposit.Size = new System.Drawing.Size(156, 81);
+            this.buttonDeposit.TabIndex = 1;
+            this.buttonDeposit.Text = "存款";
+            this.buttonDeposit.UseVisualStyleBackColor = true;
+            // 
+            // buttonWithdraw
+            // 
+            this.buttonWithdraw.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonWithdraw.Location = new System.Drawing.Point(413, 49);
+            this.buttonWithdraw.Name = "buttonWithdraw";
+            this.buttonWithdraw.Size = new System.Drawing.Size(156, 81);
+            this.buttonWithdraw.TabIndex = 2;
+            this.buttonWithdraw.Text = "提款";
+            this.buttonWithdraw.UseVisualStyleBackColor = true;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.buttonExit.Location = new System.Drawing.Point(606, 49);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(156, 81);
+            this.buttonExit.TabIndex = 3;
+            this.buttonExit.Text = "離開";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 188);
+            this.Controls.Add(this.buttonOpen);
+            this.Controls.Add(this.buttonDeposit);
+            this.Controls.Add(this.buttonWithdraw);
+            this.Controls.Add(this.buttonExit);
+            this.Name = "MainForm";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+    }
+}
+
