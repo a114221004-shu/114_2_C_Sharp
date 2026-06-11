@@ -1,0 +1,177 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public struct MorseMapping
+        {
+            public char Character;   // 記錄字元
+            public string MorseCode; // 記錄摩斯密碼
+        }
+
+        // 2. 依題目需求：使用 List 儲存完整摩斯密碼表，不可使用 Dictionary
+        private List<MorseMapping> morseCodeTable = new List<MorseMapping>();
+
+        // 密碼表檔案名稱定值
+        private const string TableFileName = "morse_code_table.md";
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+       
+
+        private void buttonConvert_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            listBox1.Items.Clear();
+
+            string inputText = textBox1.Text;
+            if (string.IsNullOrEmpty(inputText))
+            {
+                return; // 若未輸入任何內容則不執行轉換
+            }
+
+            List<string> totalMorseList = new List<string>();
+
+            // 逐字處理輸入的字串
+            foreach (char rawChar in inputText)
+            {
+                // 需求符合：小寫英文字會轉成大寫處理
+                char searchChar = char.ToUpper(rawChar);
+
+                // 在 List 中搜尋對應的摩斯密碼 (不使用 Dictionary)
+                string foundMorse = null;
+                foreach (var item in morseCodeTable)
+                {
+                    if (item.Character == searchChar)
+                    {
+                        foundMorse = item.MorseCode;
+                        break;
+                    }
+                }
+
+                // 找到對應密碼則處理輸出；未定義在密碼表中的字元則被忽略
+                if (foundMorse != null)
+                {
+                    totalMorseList.Add(foundMorse);
+
+                    // 於清單方塊(listBox1)內顯示逐字對照結果
+                    // 為方便看清空白，顯示時將空白字元顯示為 [space]
+                    string displayChar = (searchChar == ' ') ? "[space]" : searchChar.ToString();
+                    listBox1.Items.Add($"{displayChar} : {foundMorse}");
+                }
+                // 若 foundMorse == null，表示未定義，依需求自動忽略不處理
+            }
+
+            // 將轉換後的摩斯密碼以空格分隔，顯示在 textBox2
+            textBox2.Text = string.Join(" ", totalMorseList);
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            listBox1.Items.Clear();
+            textBox1.Focus(); // 將游標重新聚焦於輸入框
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadMorseCodeTable();
+        }
+
+        private void LoadMorseCodeTable()
+        {
+            if (!File.Exists(TableFileName))
+            {
+                MessageBox.Show($"找不到摩斯密碼表檔案：{TableFileName}\n請確認檔案是否已放置於 bin\\Debug 執行目錄中。",
+                                "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                // 要求符合：1. 使用 File.OpenText() 開啟檔案；2. 使用 StreamReader 接收
+                using (StreamReader inputFile = File.OpenText(TableFileName))
+                {
+                    // 要求符合：3. 使用 !inputFile.EndOfStream 判斷檔案是否仍有資料未讀取
+                    while (!inputFile.EndOfStream)
+                    {
+                        string line = inputFile.ReadLine();
+
+                        // 略過空行或 Markdown 格式的標題欄位與分隔線（如 | :--- | :--- |）
+                        if (string.IsNullOrWhiteSpace(line) || line.StartsWith("#") || line.Contains(":---"))
+                            continue;
+
+                        // 依據 Markdown 表格的豎線 '|' 進行安全拆分
+                        string[] parts = line.Split('|');
+
+                        // 由於每行最前面和最後面的 '|' 會切出空字串，有效資料從索引 1 開始
+                        // 每 2 個欄位（一個字元 + 一个密碼）為一組進行循環提取
+                        for (int i = 1; i < parts.Length - 1; i += 2)
+                        {
+                            if (i + 1 >= parts.Length) break;
+
+                            string rawCharStr = parts[i].Trim();
+                            string rawCodeStr = parts[i + 1].Trim().Replace("`", ""); // 移除 Markdown 的反單引號 `
+
+                            if (string.IsNullOrEmpty(rawCharStr) || string.IsNullOrEmpty(rawCodeStr))
+                                continue;
+
+                            char targetChar;
+
+                            // 特殊字元對照轉換邏輯
+                            if (rawCharStr.Equals("space", StringComparison.OrdinalIgnoreCase))
+                            {
+                                targetChar = ' '; // 轉換為空白字元
+                            }
+                            else if (rawCharStr.Equals("comma", StringComparison.OrdinalIgnoreCase))
+                            {
+                                targetChar = ','; // 轉換為逗號
+                            }
+                            else if (rawCharStr.Equals("period", StringComparison.OrdinalIgnoreCase))
+                            {
+                                targetChar = '.'; // 轉換為句號
+                            }
+                            else
+                            {
+                                // 一般英數字直接取第一個字元並強制大寫
+                                targetChar = rawCharStr.ToUpper()[0];
+                            }
+
+                            // 處理密碼中可能的特殊文字標示
+                            if (rawCodeStr.Equals("*space*", StringComparison.OrdinalIgnoreCase))
+                            {
+                                rawCodeStr = " "; // 若對照表密碼寫 *space*，轉成空格或依您需求自訂
+                            }
+
+                            // 實例化結構體並存入 List 清單
+                            MorseMapping mapping = new MorseMapping
+                            {
+                                Character = targetChar,
+                                MorseCode = rawCodeStr
+                            };
+                            morseCodeTable.Add(mapping);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"讀取檔案時發生錯誤：{ex.Message}", "系統錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+}

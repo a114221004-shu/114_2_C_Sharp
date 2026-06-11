@@ -1,0 +1,148 @@
+﻿namespace WindowsFormsApp1
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.labelInput = new System.Windows.Forms.Label();
+            this.labelOutput = new System.Windows.Forms.Label();
+            this.labelMapping = new System.Windows.Forms.Label();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
+            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.listBoxMapping = new System.Windows.Forms.ListBox();
+            this.buttonConvert = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // labelInput
+            // 
+            this.labelInput.AutoSize = true;
+            this.labelInput.Location = new System.Drawing.Point(12, 9);
+            this.labelInput.Name = "labelInput";
+            this.labelInput.Size = new System.Drawing.Size(80, 12);
+            this.labelInput.TabIndex = 0;
+            this.labelInput.Text = "請輸入字串：";
+            // 
+            // textBoxInput
+            // 
+            this.textBoxInput.Location = new System.Drawing.Point(14, 28);
+            this.textBoxInput.Multiline = true;
+            this.textBoxInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(468, 100);
+            this.textBoxInput.TabIndex = 1;
+            // 
+            // labelOutput
+            // 
+            this.labelOutput.AutoSize = true;
+            this.labelOutput.Location = new System.Drawing.Point(12, 140);
+            this.labelOutput.Name = "labelOutput";
+            this.labelOutput.Size = new System.Drawing.Size(96, 12);
+            this.labelOutput.TabIndex = 2;
+            this.labelOutput.Text = "完整摩斯密碼：";
+            // 
+            // textBoxOutput
+            // 
+            this.textBoxOutput.Location = new System.Drawing.Point(14, 158);
+            this.textBoxOutput.Multiline = true;
+            this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxOutput.Name = "textBoxOutput";
+            this.textBoxOutput.ReadOnly = true;
+            this.textBoxOutput.Size = new System.Drawing.Size(468, 100);
+            this.textBoxOutput.TabIndex = 3;
+            // 
+            // labelMapping
+            // 
+            this.labelMapping.AutoSize = true;
+            this.labelMapping.Location = new System.Drawing.Point(12, 270);
+            this.labelMapping.Name = "labelMapping";
+            this.labelMapping.Size = new System.Drawing.Size(84, 12);
+            this.labelMapping.TabIndex = 4;
+            this.labelMapping.Text = "逐字對照：";
+            // 
+            // listBoxMapping
+            // 
+            this.listBoxMapping.FormattingEnabled = true;
+            this.listBoxMapping.ItemHeight = 12;
+            this.listBoxMapping.Location = new System.Drawing.Point(14, 288);
+            this.listBoxMapping.Name = "listBoxMapping";
+            this.listBoxMapping.Size = new System.Drawing.Size(468, 100);
+            this.listBoxMapping.TabIndex = 5;
+            // 
+            // buttonConvert
+            // 
+            this.buttonConvert.Location = new System.Drawing.Point(326, 404);
+            this.buttonConvert.Name = "buttonConvert";
+            this.buttonConvert.Size = new System.Drawing.Size(75, 28);
+            this.buttonConvert.TabIndex = 6;
+            this.buttonConvert.Text = "轉換";
+            this.buttonConvert.UseVisualStyleBackColor = true;
+            this.buttonConvert.Click += new System.EventHandler(this.buttonConvert_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(407, 404);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 28);
+            this.buttonClear.TabIndex = 7;
+            this.buttonClear.Text = "清除";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(496, 444);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonConvert);
+            this.Controls.Add(this.listBoxMapping);
+            this.Controls.Add(this.labelMapping);
+            this.Controls.Add(this.textBoxOutput);
+            this.Controls.Add(this.labelOutput);
+            this.Controls.Add(this.textBoxInput);
+            this.Controls.Add(this.labelInput);
+            this.Name = "Form1";
+            this.Text = "摩斯密碼轉換";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label labelInput;
+        private System.Windows.Forms.Label labelOutput;
+        private System.Windows.Forms.Label labelMapping;
+        private System.Windows.Forms.TextBox textBoxInput;
+        private System.Windows.Forms.TextBox textBoxOutput;
+        private System.Windows.Forms.ListBox listBoxMapping;
+        private System.Windows.Forms.Button buttonConvert;
+        private System.Windows.Forms.Button buttonClear;
+    }
+}
+
