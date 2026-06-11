@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WindowsFormsApp2
+{
+    internal class Employee
+    {
+        public string Name { get; set; }
+        public int IdNumber { get; set; }
+        public string Department { get; set; }
+        public string Position { get; set; }
+
+        public Employee()
+        {
+            Name = string.Empty;
+            IdNumber = 0;
+            Department = string.Empty;
+            Position = string.Empty;
+        }
+
+        public Employee(string name, int idNumber)
+        {
+            Name = name ?? string.Empty;
+            IdNumber = idNumber;
+            Department = string.Empty;
+            Position = string.Empty;
+        }
+
+        public Employee(string name, int idNumber, string department, string position)
+        {
+            Name = name ?? string.Empty;
+            IdNumber = idNumber;
+            Department = department ?? string.Empty;
+            Position = position ?? string.Empty;
+        }
+
+        public override string ToString()
+        {
+            return $"{IdNumber}\t{Name}";
+        }
+    }
+}

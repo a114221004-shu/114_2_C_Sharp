@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{C3402573-8C2A-43AD-8017-BF9A90698BEB}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3402573-8C2A-43AD-8017-BF9A90698BEB}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\m303\\desktop\\114_2_c_sharp\\115_06_11\\windowsformsapp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C3402573-8C2A-43AD-8017-BF9A90698BEB}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\m303\\Desktop\\114_2_C_Sharp\\115_06_11\\WindowsFormsApp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C3402573-8C2A-43AD-8017-BF9A90698BEB}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
               "ToolTip": "C:\\Users\\m303\\Desktop\\114_2_C_Sharp\\115_06_11\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAwwFgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAcwE4AAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T05:30:02.747Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Form1.Designer.cs",
               "ViewState": "AgIAAFkAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T05:00:53.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-11T05:00:53.295Z"
             }
           ]
         }
